@@ -12,4 +12,10 @@ class Post extends Model
     protected $table = 'posts';
 
     protected $guarded = false;
+
+    /* Relations */
+    public function images()
+    {
+        return $this->hasMany(Image::class, 'post_id', 'id');
+    }
 }
